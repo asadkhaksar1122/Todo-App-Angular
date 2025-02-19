@@ -1,0 +1,21 @@
+<ul
+  class="list-group list-group-flush"
+  id="taskList"
+  *ngFor="let task of Alltodo"
+>
+  <!-- Sample Task Items -->
+  <li class="list-group-item task-item d-flex align-items-center">
+    <input
+      class="form-check-input me-3"
+      type="checkbox"
+      (change)="toggleTask(task.id)"
+      [checked]="task.completed"
+    />
+    <span class="flex-grow-1" [ngClass]="{ completed: task.completed }">{{
+      task.title
+    }}</span>
+    <button class="btn btn-sm btn-danger">
+      <i class="bi bi-trash" (click)="deletetask(task.id)">Delete</i>
+    </button>
+  </li>
+</ul>

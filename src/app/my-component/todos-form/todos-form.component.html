@@ -1,0 +1,23 @@
+<!-- todos-form.component.html -->
+<form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+  <div class="card-body">
+    <div class="input-group mb-4">
+      <input
+        type="text"
+        class="form-control form-control-lg"
+        placeholder="Add new task..."
+        formControlName="task"
+      />
+      <button
+        class="btn btn-primary btn-lg"
+        type="submit"
+        [disabled]="todoForm.invalid"
+      >
+        <i class="bi bi-plus-lg"></i> Add Task
+      </button>
+    </div>
+    <div *ngIf="todoForm.get('task')?.invalid && todoForm.get('task')?.touched">
+      Task is required and must be at least 3 characters long.
+    </div>
+  </div>
+</form>

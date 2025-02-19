@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- Header Card -->
+      <div class="card todo-card mb-4 border-0">
+        <div class="card-header bg-primary text-white border-0">
+          <h2 class="mb-0">Todo List</h2>
+          <small>Get things done!</small>
+        </div>
+        <app-todos-form (taskadded)="taskadded($event)" ></app-todos-form>
+        <app-todos-item
+          [Alltodo]="Alltodo"
+          (tododelete)="deletetask($event)"
+          (taskcomplete)="taskcompleted($event)"
+        ></app-todos-item>
+      </div>
+    </div>
+  </div>
+</div>
