@@ -16,7 +16,7 @@ export class TodosItemComponent {
       completed: true,
     },
   ];
-
+  status: 'completed' | 'Notcompleted' | 'All' = 'All';
   @Output() tododelete = new EventEmitter<string>();
   @Output() taskcomplete = new EventEmitter<string>();
   @Output() filterout = new EventEmitter<
@@ -32,6 +32,8 @@ export class TodosItemComponent {
   }
   filter(filter: 'completed' | 'Notcompleted' | 'All') {
     this.filterout.emit(filter);
+    console.log(filter);
+    this.status = filter;
   }
   deleteall() {
     this.clear.emit();

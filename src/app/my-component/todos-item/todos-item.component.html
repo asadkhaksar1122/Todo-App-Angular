@@ -28,13 +28,17 @@
     <button
       type="button"
       class="btn btn-outline-primary btn-sm"
+      [class.btn-primary]="status === 'All'"
+      [class.text-white]="status === 'All'"
       (click)="filter('All')"
     >
-       Show All
+      Show All
     </button>
     <button
       type="button"
       class="btn btn-outline-success btn-sm"
+      [class.btn-success]="status === 'completed'"
+      [class.text-white]="status === 'completed'"
       (click)="filter('completed')"
     >
       Show Completed
@@ -43,9 +47,13 @@
       type="button"
       class="btn btn-outline-warning btn-sm"
       (click)="filter('Notcompleted')"
+      [class.btn-warning]="status === 'Notcompleted'"
+      [class.text-white]="status === 'Notcompleted'"
     >
       Show Active
     </button>
   </div>
-  <button type="button" class="btn btn-danger btn-sm" (click)="deleteall()" >Clear All</button>
+  <button type="button" class="btn btn-danger btn-sm" (click)="deleteall()">
+    Clear All
+  </button>
 </div>
