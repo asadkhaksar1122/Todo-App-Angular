@@ -3,3 +3,7 @@ export interface TodoType {
   title: string;
   completed: boolean;
 }
+export interface AlertType {
+  message: string;
+  type: 'success' | 'danger';
+}

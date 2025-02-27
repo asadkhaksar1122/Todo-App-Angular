@@ -1,0 +1,15 @@
+@if (alertshow) {
+<div
+  [class]="'alert   alert-dismissible fade show my-2 alert-' + alertshow.type"
+  role="alert"
+>
+  {{ alertshow.message }}
+
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+}

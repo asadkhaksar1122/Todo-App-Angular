@@ -7,11 +7,14 @@
           <h2 class="mb-0">Todo List</h2>
           <small>Get things done!</small>
         </div>
-        <app-todos-form (taskadded)="taskadded($event)" ></app-todos-form>
+        <app-alert [alertshow]="alertshow"></app-alert>
+        <app-todos-form (taskadded)="taskadded($event)"></app-todos-form>
         <app-todos-item
           [Alltodo]="Alltodo"
           (tododelete)="deletetask($event)"
           (taskcomplete)="taskcompleted($event)"
+          (filterout)="filterout($event)"
+          (clear)="clear()"
         ></app-todos-item>
       </div>
     </div>

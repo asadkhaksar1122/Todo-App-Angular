@@ -33,8 +33,6 @@ export class TodosFormComponent {
 
       this.taskadded.emit(newtask);
       this.todoForm.reset();
-    } else {
-      console.log('Form is invalid');
     }
   }
 }

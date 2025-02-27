@@ -15,7 +15,7 @@
           "options": {
             "outputPath": "dist/todo-app",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "browser": "src/main.ts", // Changed property name from "main" to "browser"
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
