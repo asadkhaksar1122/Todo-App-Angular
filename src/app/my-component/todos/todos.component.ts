@@ -42,9 +42,11 @@ export class TodosComponent {
     this.Alltodo = this.Alltodo.map((task) =>
       task.id === id ? { ...task, completed: !task.completed } : task
     );
+    const changedtask = this.Alltodo.find((task) => task.id === id);
+    const changedtext = changedtask?.completed ? 'completed' : 'Uncompleted';
     localStorage.setItem('angulartodos', JSON.stringify(this.Alltodo));
     this.alertshow = {
-      message: 'Task marked completed successfully',
+      message: `Task marked ${changedtext} successfully`,
       type: 'success',
     };
     setTimeout(() => {
